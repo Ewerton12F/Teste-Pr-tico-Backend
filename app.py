@@ -51,13 +51,13 @@ pessoas_schema = PessoaSchema(many=True)
 @app.route('/')
 def testdb():
     try:
-        db.session.query('1').from_statement(text('SELECT 1')).all()
+        db.session.query(text('1')).from_statement(text('SELECT 1')).all()
         return '<h1>It works.</h1>'
     except Exception as e:
         # see Terminal for description of the error
         print("\nThe error:\n" + str(e) + "\n")
         return '<h1>Something is broken.</h1>'
-        
+
 # RETRIEVE ---------------------------------------------------------------------
 
 # RUN SERVER -------------------------------------------------------------------
